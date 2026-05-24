@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Evaluation</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="card">
+
+        <!-- Nav -->
+        <div class="nav-bar">
+          <a class="btn-back" href="selection.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            Back
+          </a>
+        </div>
+
+        <!-- App icon -->
+        <div class="app-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg>
+        </div>
+
+        <div>
+          <h1 class="page-title">Evaluation</h1>
+          <p class="page-subtitle" style="margin-top:4px">Perform the evaluation tasks below.</p>
+        </div>
+
+        <!-- User info -->
+        <div id="user-info">Loading user...</div>
+
+        <!-- Gesture instructions -->
+        <div>
+          <p style="font-size:0.82rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px">Gestures</p>
+          <div class="gesture-grid">
+            <div class="gesture-item">
+              <div class="gesture-icon">
+                <svg viewBox="0 0 24 24"><path d="M9 12h6M12 9v6"/><circle cx="12" cy="12" r="9"/></svg>
+              </div>
+              <div class="gesture-info">
+                <div class="gesture-name">Tap</div>
+                <div class="gesture-desc">Single finger tap anywhere on the surface</div>
+              </div>
+            </div>
+            <div class="gesture-item">
+              <div class="gesture-icon">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M15 8l4 4-4 4"/></svg>
+              </div>
+              <div class="gesture-info">
+                <div class="gesture-name">Swipe</div>
+                <div class="gesture-desc">Slide finger horizontally across the surface</div>
+              </div>
+            </div>
+            <div class="gesture-item">
+              <div class="gesture-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M8 15l4 4 4-4"/></svg>
+              </div>
+              <div class="gesture-info">
+                <div class="gesture-name">Scroll</div>
+                <div class="gesture-desc">Slide finger vertically up or down</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div id="training-status">Tap Start to begin evaluation</div>
+        <div id="current-instruction">Ready</div>
+
+        <!-- Control buttons -->
+        <div style="display:flex;gap:10px">
+          <button id="start-eval" class="btn-primary" type="button" style="flex:1;pointer-events:auto;position:relative;z-index:1">▶ Start Evaluation</button>
+          <button id="stop-eval"  class="btn-secondary" type="button" style="flex:1;display:none;pointer-events:auto;position:relative;z-index:1">■ Stop</button>
+        </div>
+
+        <!-- Touch surface -->
+        <div id="surface" style="
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          min-height:200px;
+          border:2px dashed var(--muted);
+          border-radius:12px;
+          color:var(--muted);
+          font-size:0.85rem;
+          font-weight:600;
+          letter-spacing:0.02em;
+          user-select:none;
+          -webkit-user-select:none;
+          touch-action:none;
+          cursor:crosshair;
+        ">
+          👆 Gesture Area
+        </div>
+
+        <div id="output" style="display:none"></div>
+
+        <a id="done-btn" class="btn-primary" href="selection.html" style="display:none;text-align:center;text-decoration:none">← Back to Session</a>
+
+      </div>
+    </div>
+
+    <script type="module" src="dist/eval.js"></script>
+  </body>
+</html>
